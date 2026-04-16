@@ -27,13 +27,57 @@ const ImageConverterIcon = () => (
   </svg>
 );
 
-const FormIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <rect x="3" y="8" width="26" height="18" rx="3" stroke="currentColor" strokeWidth="2" fill="none"/>
-    <path d="M10 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M12 17h8M12 21h5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    <circle cx="9" cy="17" r="1.5" fill="currentColor"/>
-    <circle cx="9" cy="21" r="1.5" fill="currentColor"/>
+const CompressorIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect x="3" y="3" width="26" height="26" rx="3" stroke="currentColor" strokeWidth="2" fill="none"/>
+    <path d="M10 16h12M16 10v12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M7 7l4 4M21 21l4 4M25 7l-4 4M7 25l4-4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round"/>
+  </svg>
+);
+
+const CropperIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <path d="M8 3v18a1 1 0 0 0 1 1h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M3 8h18a1 1 0 0 1 1 1v18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <rect x="10" y="10" width="12" height="12" rx="1" stroke="currentColor" strokeWidth="2" strokeDasharray="3 2"/>
+  </svg>
+);
+
+const ExifIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect x="4" y="6" width="24" height="20" rx="3" stroke="currentColor" strokeWidth="2" fill="none"/>
+    <circle cx="12" cy="14" r="3" stroke="currentColor" strokeWidth="2"/>
+    <path d="M19 12h5M19 16h5M8 22h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M24 4l2 2-2 2M28 6H20" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const FaviconIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect x="3" y="3" width="26" height="26" rx="5" stroke="currentColor" strokeWidth="2" fill="none"/>
+    <rect x="8" y="8" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="1.75" fill="none"/>
+    <path d="M12 16c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round"/>
+    <circle cx="16" cy="16" r="1.5" fill="currentColor"/>
+  </svg>
+);
+
+const OcrIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="22" rx="2" stroke="currentColor" strokeWidth="2" fill="none"/>
+    <path d="M7 11h10M7 15h10M7 19h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M24 18l5 5-2 2-5-5v-1l1-1z" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="22" cy="14" r="4" stroke="currentColor" strokeWidth="1.75"/>
+  </svg>
+);
+
+const PdfIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <path d="M18 3H8a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V11z" stroke="currentColor" strokeWidth="2" fill="none"/>
+    <path d="M18 3v8h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M10 17h3a2 2 0 0 1 0 4h-2v3" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M18 17v7M18 17h2a2 2 0 0 1 0 4h-2" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round"/>
+    <path d="M22 24v-7h3" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M22 20h2" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round"/>
   </svg>
 );
 
@@ -57,9 +101,8 @@ const SERVICES = [
     label: 'Disponible',
     labelType: 'available',
     title: 'Generador QR',
-    description:
-      'Crea codigos QR personalizados para URLs, texto, contactos y mas. Anade tu logo al centro con soporte de alta correccion de errores.',
-    features: ['Logo personalizado', 'Alta resolucion (512px)', 'Correccion de errores nivel H'],
+    description: 'Crea códigos QR personalizados para URLs, texto, contactos y más. Añade tu logo al centro con soporte de alta corrección de errores.',
+    features: ['Logo personalizado', 'Alta resolución (512px)', 'Corrección de errores nivel H'],
     href: '/qr-generator',
     cta: 'Abrir herramienta',
   },
@@ -68,24 +111,77 @@ const SERVICES = [
     Icon: ImageConverterIcon,
     label: 'Disponible',
     labelType: 'available',
-    title: 'Convertidor de Imagenes',
-    description:
-      'Convierte tus imágenes a JPG, PNG, WebP o AVIF directamente en tu navegador. Sin subidas a servidores.',
-    features: ['Sin limite de archivos', 'Control de calidad', 'Descarga en ZIP'],
+    title: 'Convertidor de Imágenes',
+    description: 'Convierte tus imágenes a JPG, PNG, WebP o AVIF directamente en tu navegador. Sin subidas a servidores.',
+    features: ['Sin límite de archivos', 'Control de calidad', 'Descarga en ZIP'],
     href: '/image-converter',
     cta: 'Abrir herramienta',
   },
   {
-    id: 'coming-soon-2',
-    Icon: FormIcon,
-    label: 'Proximamente',
+    id: 'image-compressor',
+    Icon: CompressorIcon,
+    label: 'Disponible',
+    labelType: 'available',
+    title: 'Compresor de Imágenes',
+    description: 'Reduce el peso de tus imágenes sin perder calidad visible. Ideal para web, redes sociales y correo.',
+    features: ['Compresión inteligente', 'Múltiples archivos', 'Comparación antes/después'],
+    href: '/image-compressor',
+    cta: 'Abrir herramienta',
+  },
+  {
+    id: 'image-cropper',
+    Icon: CropperIcon,
+    label: 'Próximamente',
     labelType: 'soon',
-    title: 'Generador de Formularios',
-    description:
-      'Disena y publica formularios profesionales en minutos. Recopila respuestas, exporta datos y automatiza notificaciones.',
-    features: ['Drag and drop', 'Exportacion CSV', 'Notificaciones email'],
+    title: 'Recortador de Imágenes',
+    description: 'Recorta, redimensiona y rota imágenes con una interfaz visual precisa. Exporta en el tamaño exacto que necesitas.',
+    features: ['Recorte libre o fijo', 'Redimensión por píxeles', 'Rotación y volteo'],
     href: null,
-    cta: 'Proximamente',
+    cta: 'Próximamente',
+  },
+  {
+    id: 'exif-remover',
+    Icon: ExifIcon,
+    label: 'Próximamente',
+    labelType: 'soon',
+    title: 'Eliminador de Metadata',
+    description: 'Elimina datos EXIF, GPS y metadata privada de tus fotos antes de compartirlas en redes o sitios web.',
+    features: ['Elimina datos GPS', 'Preserva calidad', 'Procesamiento local'],
+    href: null,
+    cta: 'Próximamente',
+  },
+  {
+    id: 'favicon-generator',
+    Icon: FaviconIcon,
+    label: 'Próximamente',
+    labelType: 'soon',
+    title: 'Generador de Favicon',
+    description: 'Convierte cualquier imagen a favicon en múltiples tamaños para navegadores, iOS, Android y PWAs.',
+    features: ['ICO, PNG, SVG', 'Múltiples tamaños', 'Listo para producción'],
+    href: null,
+    cta: 'Próximamente',
+  },
+  {
+    id: 'ocr',
+    Icon: OcrIcon,
+    label: 'Próximamente',
+    labelType: 'soon',
+    title: 'Imagen a Texto (OCR)',
+    description: 'Extrae texto de imágenes, capturas de pantalla y documentos escaneados. Soporta múltiples idiomas.',
+    features: ['100+ idiomas', 'Copiar al portapapeles', 'Funciona offline'],
+    href: null,
+    cta: 'Próximamente',
+  },
+  {
+    id: 'pdf-generator',
+    Icon: PdfIcon,
+    label: 'Próximamente',
+    labelType: 'soon',
+    title: 'Generador de PDF',
+    description: 'Convierte imágenes a PDF o combina múltiples imágenes en un solo documento PDF descargable.',
+    features: ['Múltiples imágenes', 'Orden personalizado', 'Sin marcas de agua'],
+    href: null,
+    cta: 'Próximamente',
   },
 ];
 

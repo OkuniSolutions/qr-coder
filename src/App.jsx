@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import QRGenerator from './pages/QRGenerator';
 import ImageConverter from './pages/ImageConverter';
+import ImageCompressor from './pages/ImageCompressor.jsx';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/qr-generator" element={<QRGenerator />} />
           <Route path="/image-converter" element={<ImageConverter />} />
+          <Route path="/image-compressor" element={<ImageCompressor />} />
         </Routes>
       </main>
       <Footer />
