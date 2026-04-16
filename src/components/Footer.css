@@ -32,20 +32,10 @@
   margin-bottom: var(--space-4);
 }
 
-.footer__brand-icon {
-  display: flex;
-  align-items: center;
-}
-
-.footer__brand-name {
-  font-size: var(--text-xl);
-  font-weight: var(--weight-extrabold);
-  color: #ffffff;
-  letter-spacing: -0.03em;
-}
-
-.footer__brand-pro {
-  color: var(--color-primary);
+.footer__brand-logo {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .footer__tagline {

@@ -21,16 +21,8 @@ export default function Navbar() {
     >
       <div className="navbar__inner container">
         {/* Brand */}
-        <Link to="/" className="navbar__brand" onClick={closeMenu} aria-label="ToolKit Pro — Ir a inicio">
-          <span className="navbar__brand-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="28" height="28" rx="7" fill="var(--color-primary)" />
-              <path d="M7 14.5L11.5 19L21 9" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </span>
-          <span className="navbar__brand-name">
-            ToolKit<span className="navbar__brand-pro">Pro</span>
-          </span>
+        <Link to="/" className="navbar__brand" onClick={closeMenu} aria-label="Okuni — Ir a inicio">
+          <img src="/logo-okuni.png" alt="Okuni" className="navbar__brand-logo" />
         </Link>
 
         {/* Desktop nav */}
