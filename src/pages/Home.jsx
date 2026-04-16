@@ -142,13 +142,13 @@ const SERVICES = [
   {
     id: 'exif-remover',
     Icon: ExifIcon,
-    label: 'Próximamente',
-    labelType: 'soon',
+    label: 'Disponible',
+    labelType: 'available',
     title: 'Eliminador de Metadata',
     description: 'Elimina datos EXIF, GPS y metadata privada de tus fotos antes de compartirlas en redes o sitios web.',
     features: ['Elimina datos GPS', 'Preserva calidad', 'Procesamiento local'],
-    href: null,
-    cta: 'Próximamente',
+    href: '/exif-remover',
+    cta: 'Abrir herramienta',
   },
   {
     id: 'favicon-generator',
