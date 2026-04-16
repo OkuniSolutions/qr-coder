@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback, useReducer } from 'react';
 import JSZip from 'jszip';
+import encodeAvif from '@jsquash/avif/encode';
 import './ImageConverter.css';
 
 /* =============================================
@@ -119,40 +120,50 @@ function getDeltaLabel(pct) {
   return sign + Math.abs(pct).toFixed(1) + '%';
 }
 
-function convertImage(file, outputFormat, quality) {
+function loadImageToCanvas(file) {
   return new Promise((resolve, reject) => {
     const img = new Image();
     const url = URL.createObjectURL(file);
     img.onload = () => {
-      try {
-        const canvas = document.createElement('canvas');
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
-        const ctx = canvas.getContext('2d');
-        if (outputFormat === 'image/jpeg') {
-          ctx.fillStyle = '#ffffff';
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
-        ctx.drawImage(img, 0, 0);
-        canvas.toBlob(
-          (blob) => {
-            URL.revokeObjectURL(url);
-            if (blob) resolve(blob);
-            else reject(new Error('Canvas toBlob returned null'));
-          },
-          outputFormat,
-          quality / 100
-        );
-      } catch (err) {
-        URL.revokeObjectURL(url);
-        reject(err);
-      }
+      const canvas = document.createElement('canvas');
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+      resolve({ canvas, ctx });
     };
     img.onerror = () => {
       URL.revokeObjectURL(url);
       reject(new Error('Could not load image'));
     };
     img.src = url;
+  });
+}
+
+async function convertImage(file, outputFormat, quality) {
+  const { canvas, ctx } = await loadImageToCanvas(file);
+
+  if (outputFormat === 'image/avif') {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const buffer = await encodeAvif(imageData, { quality, effort: 4 });
+    return new Blob([buffer], { type: 'image/avif' });
+  }
+
+  return new Promise((resolve, reject) => {
+    if (outputFormat === 'image/jpeg') {
+      ctx.globalCompositeOperation = 'destination-over';
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    canvas.toBlob(
+      (blob) => {
+        if (blob) resolve(blob);
+        else reject(new Error('Canvas toBlob returned null'));
+      },
+      outputFormat,
+      quality / 100
+    );
   });
 }
 
