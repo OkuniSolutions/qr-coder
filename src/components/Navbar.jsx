@@ -62,7 +62,7 @@ export default function Navbar() {
             className="btn btn--primary btn--sm navbar__cta"
             onClick={closeMenu}
           >
-            Comenzar gratis
+            Explorar
           </Link>
         </nav>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
@@ -70,7 +70,7 @@ const SERVICES = [
     labelType: 'available',
     title: 'Convertidor de Imagenes',
     description:
-      'Convierte tus imagenes a JPG, PNG o WebP directamente en tu navegador. Sin subidas a servidores.',
+      'Convierte tus imágenes a JPG, PNG, WebP o AVIF directamente en tu navegador. Sin subidas a servidores.',
     features: ['Sin limite de archivos', 'Control de calidad', 'Descarga en ZIP'],
     href: '/image-converter',
     cta: 'Abrir herramienta',
@@ -96,6 +96,7 @@ const STATS = [
 ];
 
 export default function Home() {
+  useEffect(() => { document.title = 'OkuniSolutions Apps — Herramientas digitales'; }, []);
   return (
     <div className="home">
       {/* HERO */}
@@ -107,21 +108,20 @@ export default function Home() {
         </div>
         <div className="hero__inner container">
           <div className="hero__content">
-            <div className="hero__badge">
-              <span className="hero__badge-dot" aria-hidden="true" />
-              Plataforma de herramientas digitales
+            <div className="hero__badge" aria-hidden="true">
+              <span className="hero__badge-dot" />
+              OkuniSolutions Apps
             </div>
             <h1 id="hero-heading" className="hero__heading">
               Herramientas profesionales,{' '}
               <span className="hero__heading-accent">sin complicaciones</span>
             </h1>
             <p className="hero__subheading">
-              ToolKit Pro reune utilidades digitales de alta calidad en un solo lugar.
-              Disenadas para equipos y profesionales que valoran su tiempo.
+              Okuni Apps reúne herramientas digitales profesionales en un solo lugar, diseñadas para hacer más con menos esfuerzo.
             </p>
             <div className="hero__actions">
               <Link to="/qr-generator" className="btn btn--primary btn--lg">
-                Comenzar gratis
+                Explorar herramientas
               </Link>
               <a href="#servicios" className="btn btn--secondary btn--lg">
                 Ver servicios

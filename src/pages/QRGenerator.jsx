@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import QRCode from 'qrcode.react';
 import './QRGenerator.css';
 
@@ -32,6 +32,7 @@ const DownloadIcon = () => (
 );
 
 export default function QRGenerator() {
+  useEffect(() => { document.title = 'Generador QR — OkuniSolutions Apps'; }, []);
   const [inputValue, setInputValue] = useState('');
   const [logoSrc, setLogoSrc] = useState(null);
   const [dragOver, setDragOver] = useState(false);

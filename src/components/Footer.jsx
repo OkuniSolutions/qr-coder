@@ -16,7 +16,7 @@ export default function Footer() {
               <img src="/logo-okuni-white.webp" alt="Okuni" className="footer__brand-logo" />
             </Link>
             <p className="footer__tagline">
-              Herramientas digitales profesionales para optimizar tu flujo de trabajo.
+              Herramientas digitales profesionales, directamente en tu navegador. Sin servidores, sin límites.
             </p>
           </div>
 

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useReducer } from 'react';
+import React, { useState, useRef, useCallback, useReducer, useEffect } from 'react';
 import JSZip from 'jszip';
 import encodeAvif from '@jsquash/avif/encode';
 import './ImageConverter.css';
@@ -220,6 +220,7 @@ function filesReducer(state, action) {
    COMPONENT
    ============================================= */
 export default function ImageConverter() {
+  useEffect(() => { document.title = 'Convertidor de Imágenes — OkuniSolutions Apps'; }, []);
   const [files, dispatch] = useReducer(filesReducer, []);
   const [outputFormat, setOutputFormat] = useState('image/webp');
   const [quality, setQuality] = useState(85);
@@ -441,6 +442,7 @@ export default function ImageConverter() {
                   aria-valuemin={1}
                   aria-valuemax={100}
                   aria-valuenow={quality}
+                  aria-valuetext={quality + ' de 100'}
                   aria-label={'Calidad de compresion: ' + quality + ' por ciento'}
                 />
               </div>
