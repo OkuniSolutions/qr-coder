@@ -131,13 +131,13 @@ const SERVICES = [
   {
     id: 'image-cropper',
     Icon: CropperIcon,
-    label: 'Próximamente',
-    labelType: 'soon',
+    label: 'Disponible',
+    labelType: 'available',
     title: 'Recortador de Imágenes',
     description: 'Recorta, redimensiona y rota imágenes con una interfaz visual precisa. Exporta en el tamaño exacto que necesitas.',
     features: ['Recorte libre o fijo', 'Redimensión por píxeles', 'Rotación y volteo'],
-    href: null,
-    cta: 'Próximamente',
+    href: '/image-cropper',
+    cta: 'Abrir herramienta',
   },
   {
     id: 'exif-remover',
