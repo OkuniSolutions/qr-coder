@@ -164,13 +164,13 @@ const SERVICES = [
   {
     id: 'ocr',
     Icon: OcrIcon,
-    label: 'Próximamente',
-    labelType: 'soon',
+    label: 'Disponible',
+    labelType: 'available',
     title: 'Imagen a Texto (OCR)',
     description: 'Extrae texto de imágenes, capturas de pantalla y documentos escaneados. Soporta múltiples idiomas.',
     features: ['100+ idiomas', 'Copiar al portapapeles', 'Funciona offline'],
-    href: null,
-    cta: 'Próximamente',
+    href: '/ocr',
+    cta: 'Abrir herramienta',
   },
   {
     id: 'pdf-generator',
