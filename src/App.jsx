@@ -10,6 +10,7 @@ import ImageCropper from './pages/ImageCropper.jsx';
 import ExifRemover from './pages/ExifRemover.jsx';
 import FaviconGenerator from './pages/FaviconGenerator.jsx';
 import OcrTool from './pages/OcrTool.jsx';
+import PdfGenerator from './pages/PdfGenerator.jsx';
 import './App.css';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/exif-remover" element={<ExifRemover />} />
           <Route path="/favicon-generator" element={<FaviconGenerator />} />
           <Route path="/ocr" element={<OcrTool />} />
+          <Route path="/pdf-generator" element={<PdfGenerator />} />
         </Routes>
       </main>
       <Footer />

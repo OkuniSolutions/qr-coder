@@ -175,13 +175,13 @@ const SERVICES = [
   {
     id: 'pdf-generator',
     Icon: PdfIcon,
-    label: 'Próximamente',
-    labelType: 'soon',
+    label: 'Disponible',
+    labelType: 'available',
     title: 'Generador de PDF',
     description: 'Convierte imágenes a PDF o combina múltiples imágenes en un solo documento PDF descargable.',
     features: ['Múltiples imágenes', 'Orden personalizado', 'Sin marcas de agua'],
-    href: null,
-    cta: 'Próximamente',
+    href: '/pdf-generator',
+    cta: 'Abrir herramienta',
   },
 ];
 
