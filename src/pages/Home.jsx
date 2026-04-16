@@ -216,11 +216,8 @@ export default function Home() {
               Okuni Apps reúne herramientas digitales profesionales en un solo lugar, diseñadas para hacer más con menos esfuerzo.
             </p>
             <div className="hero__actions">
-              <Link to="/qr-generator" className="btn btn--primary btn--lg">
+              <a href="#servicios" className="btn btn--primary btn--lg">
                 Explorar herramientas
-              </Link>
-              <a href="#servicios" className="btn btn--secondary btn--lg">
-                Ver servicios
               </a>
             </div>
           </div>
@@ -358,15 +355,15 @@ export default function Home() {
           <div className="cta-banner__inner">
             <div className="cta-banner__text">
               <h2 id="cta-heading" className="cta-banner__title">
-                Empieza a usar el Generador QR ahora mismo
+                8 herramientas gratuitas, listas para usar
               </h2>
               <p className="cta-banner__subtitle">
-                Sin registro. Sin instalacion. Directamente en tu navegador.
+                Sin registro. Sin instalación. Todo directamente en tu navegador.
               </p>
             </div>
-            <Link to="/qr-generator" className="btn btn--accent btn--lg cta-banner__btn">
-              Generar mi primer QR
-            </Link>
+            <a href="#servicios" className="btn btn--accent btn--lg cta-banner__btn">
+              Ver todas las herramientas
+            </a>
           </div>
         </div>
       </section>
