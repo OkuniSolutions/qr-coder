@@ -153,13 +153,13 @@ const SERVICES = [
   {
     id: 'favicon-generator',
     Icon: FaviconIcon,
-    label: 'Próximamente',
-    labelType: 'soon',
+    label: 'Disponible',
+    labelType: 'available',
     title: 'Generador de Favicon',
     description: 'Convierte cualquier imagen a favicon en múltiples tamaños para navegadores, iOS, Android y PWAs.',
     features: ['ICO, PNG, SVG', 'Múltiples tamaños', 'Listo para producción'],
-    href: null,
-    cta: 'Próximamente',
+    href: '/favicon-generator',
+    cta: 'Abrir herramienta',
   },
   {
     id: 'ocr',
