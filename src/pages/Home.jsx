@@ -17,10 +17,13 @@ const QRIcon = () => (
   </svg>
 );
 
-const ConvertIcon = () => (
+const ImageConverterIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M16 3L29 10V22L16 29L3 22V10L16 3Z" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-    <path d="M16 3V29M3 10L29 10M3 22L29 22" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 2"/>
+    <rect x="2" y="7" width="20" height="16" rx="3" stroke="currentColor" strokeWidth="2" fill="none"/>
+    <path d="M6 19l4-5 3 4 3-4 4 5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="9" cy="13" r="1.5" fill="currentColor"/>
+    <path d="M25 11l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M29 15h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
   </svg>
 );
 
@@ -61,16 +64,16 @@ const SERVICES = [
     cta: 'Abrir herramienta',
   },
   {
-    id: 'coming-soon-1',
-    Icon: ConvertIcon,
-    label: 'Proximamente',
-    labelType: 'soon',
-    title: 'Convertidor de Archivos',
+    id: 'image-converter',
+    Icon: ImageConverterIcon,
+    label: 'Disponible',
+    labelType: 'available',
+    title: 'Convertidor de Imagenes',
     description:
-      'Convierte entre formatos de imagen, documentos y datos de forma instantanea, directamente en tu navegador sin subir nada a un servidor.',
-    features: ['100% en el navegador', 'Multiples formatos', 'Sin limite de tamano'],
-    href: null,
-    cta: 'Proximamente',
+      'Convierte tus imagenes a JPG, PNG o WebP directamente en tu navegador. Sin subidas a servidores.',
+    features: ['Sin limite de archivos', 'Control de calidad', 'Descarga en ZIP'],
+    href: '/image-converter',
+    cta: 'Abrir herramienta',
   },
   {
     id: 'coming-soon-2',

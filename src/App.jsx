@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import QRGenerator from './pages/QRGenerator';
+import ImageConverter from './pages/ImageConverter';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/qr-generator" element={<QRGenerator />} />
+          <Route path="/image-converter" element={<ImageConverter />} />
         </Routes>
       </main>
       <Footer />
