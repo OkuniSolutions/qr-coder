@@ -11,6 +11,7 @@ import ExifRemover from './pages/ExifRemover.jsx';
 import FaviconGenerator from './pages/FaviconGenerator.jsx';
 import OcrTool from './pages/OcrTool.jsx';
 import PdfGenerator from './pages/PdfGenerator.jsx';
+import PdfCompressor from './pages/PdfCompressor.jsx';
 import './App.css';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/favicon-generator" element={<FaviconGenerator />} />
           <Route path="/ocr" element={<OcrTool />} />
           <Route path="/pdf-generator" element={<PdfGenerator />} />
+          <Route path="/pdf-compressor" element={<PdfCompressor />} />
         </Routes>
       </main>
       <Footer />

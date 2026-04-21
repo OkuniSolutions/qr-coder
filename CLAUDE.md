@@ -5,16 +5,39 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm start        # Start dev server at http://localhost:3000
-npm run build    # Production build to /build
-npm test         # Run tests in watch mode
-npm test -- --watchAll=false  # Run tests once (CI mode)
+npm start        # Start Vite dev server (http://localhost:5173)
+npm run build    # Production build to /dist
+npm run preview  # Preview production build locally
 ```
+
+No test runner is currently configured.
 
 ## Architecture
 
-Single-component React app (`src/App.js`) bootstrapped with Create React App.
+Multi-page React 18 app built with **Vite** (+ WASM plugin for `@jsquash/avif`). UI is in Spanish.
 
-- **QR generation**: Uses `qrcode.react` — renders a `<QRCode>` SVG/canvas element directly from the `inputValue` state. The QR code only renders when `inputValue` is non-empty. Current config: size 512px, error correction level "H".
-- **Styling**: Plain CSS in `src/App.css` — no CSS framework.
-- **Entry point**: `src/index.js` mounts `<App>` into `#root`.
+### Routing & Layout
+
+`src/App.jsx` uses `react-router-dom` v7 with `<BrowserRouter>`. Every route shares a common layout: `<Navbar>` + `<main>` + `<Footer>`.
+
+Routes map 1:1 to page components in `src/pages/`:
+
+| Route | Page Component | Key Dependency |
+|---|---|---|
+| `/` | `Home` | — |
+| `/qr-generator` | `QRGenerator` | `qrcode.react` |
+| `/image-converter` | `ImageConverter` | `@jsquash/avif`, Canvas API |
+| `/image-compressor` | `ImageCompressor` | `browser-image-compression` |
+| `/image-cropper` | `ImageCropper` | `cropperjs` |
+| `/exif-remover` | `ExifRemover` | `piexifjs` |
+| `/favicon-generator` | `FaviconGenerator` | Canvas API, `jszip` |
+| `/ocr` | `OcrTool` | `tesseract.js` |
+| `/pdf-generator` | `PdfGenerator` | `jspdf` |
+| `/pdf-compressor` | `PdfCompressor` | `pdfjs-dist`, `jspdf` |
+
+### Conventions
+
+- Each page is a self-contained component with a co-located `.css` file (plain CSS, no framework).
+- Shared components (`Navbar`, `Footer`) live in `src/components/`.
+- The `TOOLS` array in `Navbar.jsx` is the single source of truth for the tools dropdown — add new tools there when adding routes.
+- All processing (compression, conversion, OCR, etc.) runs client-side in the browser.

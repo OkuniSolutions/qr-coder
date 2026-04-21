@@ -11,6 +11,7 @@ const TOOLS = [
   { to: '/favicon-generator',label: 'Generador de Favicon' },
   { to: '/ocr',             label: 'Imagen a Texto (OCR)' },
   { to: '/pdf-generator',   label: 'Generador de PDF' },
+  { to: '/pdf-compressor',  label: 'Compresor de PDF' },
 ];
 
 export default function Navbar() {

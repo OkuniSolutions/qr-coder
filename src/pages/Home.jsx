@@ -81,6 +81,15 @@ const PdfIcon = () => (
   </svg>
 );
 
+const PdfCompressIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <path d="M18 3H8a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V11z" stroke="currentColor" strokeWidth="2" fill="none"/>
+    <path d="M18 3v8h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M10 19l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M10 25l4-4 4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 const CheckIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
     <circle cx="7" cy="7" r="6" fill="var(--color-primary-light)"/>
@@ -181,6 +190,17 @@ const SERVICES = [
     description: 'Convierte imágenes a PDF o combina múltiples imágenes en un solo documento PDF descargable.',
     features: ['Múltiples imágenes', 'Orden personalizado', 'Sin marcas de agua'],
     href: '/pdf-generator',
+    cta: 'Abrir herramienta',
+  },
+  {
+    id: 'pdf-compressor',
+    Icon: PdfCompressIcon,
+    label: 'Disponible',
+    labelType: 'available',
+    title: 'Compresor de PDF',
+    description: 'Reduce el tama\u00f1o de tus archivos PDF sin necesidad de subirlos a ning\u00fan servidor. Ideal para correos y formularios.',
+    features: ['Compresi\u00f3n configurable', 'M\u00faltiples archivos', 'Descarga en ZIP'],
+    href: '/pdf-compressor',
     cta: 'Abrir herramienta',
   },
 ];
@@ -355,7 +375,7 @@ export default function Home() {
           <div className="cta-banner__inner">
             <div className="cta-banner__text">
               <h2 id="cta-heading" className="cta-banner__title">
-                8 herramientas gratuitas, listas para usar
+                9 herramientas gratuitas, listas para usar
               </h2>
               <p className="cta-banner__subtitle">
                 Sin registro. Sin instalación. Todo directamente en tu navegador.
